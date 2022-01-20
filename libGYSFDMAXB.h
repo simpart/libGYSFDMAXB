@@ -4,7 +4,6 @@
 #include <map>
 #include <vector>
 
-
 class PosInfo {
   public:
     std::map<std::string, float> latitude;
@@ -16,7 +15,7 @@ class PosInfo {
       latitude["value"]   = (deg*100) + sec;
     }
     
-    void setLongtitude (float deg, float sec) {
+    void setLongitude (float deg, float sec) {
       longitude["degrees"] = deg;
       longitude["minutes"] = sec;
       longitude["value"]   = (deg*100) + sec;

@@ -215,13 +215,12 @@ bool GYSFDMAXB::getposGPGGA (PosInfo *pos) {
   float longi = std::stof(conts[gpgga_longitude]);
   /* latitude */
   deg_buf = lati / 100;
-  pos->latitude["degrees"] = (float) deg_buf;  
-  pos->latitude["minutes"] = lati - (deg_buf*100);
+  pos->setLatitude((float) deg_buf, lati - (deg_buf*100));
+  
   /* logitude */
   deg_buf = longi / 100;
-  pos->longitude["degrees"] = (float) deg_buf;
-  pos->longitude["minutes"] = longi - (deg_buf*100);
-
+  pos->setLongitude((float) deg_buf, longi - (deg_buf*100));
+  
   return true;
 }
 
@@ -255,12 +254,11 @@ bool GYSFDMAXB::getposGPRMC (PosInfo *pos) {
   float longi = std::stof(conts[gprmc_longitude]);
   /* latitude */
   deg_buf = lati / 100;
-  pos->latitude["degrees"] = (float) deg_buf;  
-  pos->latitude["minutes"] = lati - (deg_buf*100);
+  pos->setLatitude((float) deg_buf, lati - (deg_buf*100));
+  
   /* logitude */
   deg_buf = longi / 100;
-  pos->longitude["degrees"] = (float) deg_buf;
-  pos->longitude["minutes"] = longi - (deg_buf*100);
+  pos->setLongitude((float) deg_buf, longi - (deg_buf*100));
 
   return true;
 }
@@ -295,12 +293,11 @@ bool GYSFDMAXB::getposGPGLL (PosInfo *pos) {
   float longi = std::stof(conts[gpgll_longitude]);
   /* latitude */
   deg_buf = lati / 100;
-  pos->latitude["degrees"] = (float) deg_buf;  
-  pos->latitude["minutes"] = lati - (deg_buf*100);
+  pos->setLatitude((float) deg_buf, lati - (deg_buf*100));
+  
   /* logitude */
   deg_buf = longi / 100;
-  pos->longitude["degrees"] = (float) deg_buf;
-  pos->longitude["minutes"] = longi - (deg_buf*100);
+  pos->setLongitude((float) deg_buf, longi - (deg_buf*100));
 
   return true;
 }
